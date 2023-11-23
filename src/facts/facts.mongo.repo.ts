@@ -1,11 +1,11 @@
-import { Fact } from '../../entities/fact';
+import { Fact } from '../../src/entities/fact.js';
 import { FactModel } from './facts.mongo.model.js';
-import { Repository } from '../repo';
-import { HttpError } from '../../types/http.error.js';
+import { Repository } from '../repos/repo.js';
+import { HttpError } from './types/http.error.js';
 import createDebug from 'debug';
-import { UsersMongoRepo } from '../users/users.mongo.repo.js';
+import { UsersMongoRepo } from '../repos/users/users.mongo.repo.js';
 
-const debug = createDebug('W7E:notes:mongo:repo');
+const debug = createDebug('W7E:facts:mongo:repo');
 
 export class FactsMongoRepo implements Repository<Fact> {
   userRepo: UsersMongoRepo;

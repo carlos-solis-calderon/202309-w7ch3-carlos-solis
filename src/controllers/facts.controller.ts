@@ -1,12 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
 
 import createDebug from 'debug';
-import { Repository } from '../repos/repo';
-import { Fact } from '../entities/fact';
+import { Repository } from '../repos/repo.js';
+import { Fact } from '../entities/fact.js';
 
 const debug = createDebug('W7E:facts:controller');
 
 export class FactsController {
+  // eslint-disable-next-line no-unused-vars
   constructor(private repo: Repository<Fact>) {
     debug('Instantiated');
   }

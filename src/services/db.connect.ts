@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
+import * as dotenv from 'dotenv';
 
+dotenv.config();
 export const dbConnect = () => {
-  const cluster = '@carlixi.mk0ept7.mongodb.net';
-  const user = 'process.env.USER_DB;';
-  const passwd = 'process.env.PASSWD_DB';
-  const uri = `mongodb+srv://${user}:${passwd}@${cluster}/?retryWrites=true&w=majority`;
-
-  mongoose.connect(uri);
+  const user = process.env.USER_DB;
+  const passwd = process.env.PASSWD_DB;
+  const uri = `mongodb+srv://${user}:${passwd}@cluster0.cm9yx23.mongodb.net/ThingIAlreadyKnow?retryWrites=true&w=majority`;
+  return mongoose.connect(uri);
 };
+// mongodb+srv://Carlos:<password>@cluster0.cm9yx23.mongodb.net/?retryWrites=true&w=majority
+// PNQm7mCxmltMVKs3

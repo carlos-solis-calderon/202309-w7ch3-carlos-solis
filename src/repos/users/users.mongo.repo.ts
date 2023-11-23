@@ -1,8 +1,8 @@
 import createDebug from 'debug';
-import { Repository } from '../repo';
+import { Repository } from '../repo.js';
 import { LoginUser, User } from '../../entities/user.js';
 import { UserModel } from './users.mongo.model.js';
-import { HttpError } from '../../types/http.error.js';
+import { HttpError } from '../../facts/types/http.error.js';
 import { Auth } from '../../services/auth.js';
 
 const debug = createDebug('W7E:users:mongo:repo');

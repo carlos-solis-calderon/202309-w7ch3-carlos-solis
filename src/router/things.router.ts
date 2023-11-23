@@ -1,5 +1,5 @@
 import { Router as createRouter } from 'express';
-import { ThingsController } from '../src/controllers/things.controller.js';
+import { ThingsController } from '../controllers/things.controller.js';
 
 export const thingsRouter = createRouter();
 
