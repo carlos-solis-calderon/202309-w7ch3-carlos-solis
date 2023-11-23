@@ -1,12 +1,8 @@
 import { hash, compare } from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import 'dotenv/config';
-import createDebug from 'debug';
 import { User } from '../entities/user.js';
+import jwt from 'jsonwebtoken';
 import { HttpError } from '../facts/types/http.error.js';
-const debug = createDebug('W7E:auth');
 
-debug('Imported');
 type TokenPayload = {
   id: User['id'];
   email: string;
@@ -14,6 +10,7 @@ type TokenPayload = {
 
 export abstract class Auth {
   static secret = process.env.JWT_SECRET;
+
   static hash(value: string): Promise<string> {
     const saltRound = 10;
     return hash(value, saltRound);
